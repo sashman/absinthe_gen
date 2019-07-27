@@ -1,6 +1,6 @@
 # AbsintheGen
 
-**TODO: Add description**
+Scaffold generator for Elixir [Absinthe](https://hexdocs.pm/absinthe/overview.html) projects
 
 ## Installation
 
@@ -18,4 +18,3 @@ end
 Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
 and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
 be found at [https://hexdocs.pm/absinthe_gen](https://hexdocs.pm/absinthe_gen).
-
