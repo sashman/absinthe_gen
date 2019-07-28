@@ -1,4 +1,4 @@
-defmodule <%= inspect context.web_module %>.Schema.<%= inspect schema.alias %>Types do
+defmodule <%= context.web_module %>.Schema.<%= schema.alias %>Types do
   use Absinthe.Schema.Notation
 
   object <%= schema.name %>: do
