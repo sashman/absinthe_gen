@@ -1,7 +1,7 @@
 defmodule <%= context.web_module %>.Schema.<%= schema.alias %>Types do
   use Absinthe.Schema.Notation
 
-  object <%= schema.name %>: do
+  object :<%= schema.name %> do
    <%= for {k, v} <- schema.attrs do %>
       field :<%= k %>, :<%= v %>
     <% end %>

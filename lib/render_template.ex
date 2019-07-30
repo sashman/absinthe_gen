@@ -12,7 +12,6 @@ defmodule AbsintheGen.RenderTemplate do
 
     [file_dir, "..", @template_directory, template_name]
     |> Path.join()
-    |> IO.inspect()
     |> EEx.eval_file(bindings, trim: true)
   end
 end
