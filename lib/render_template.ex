@@ -6,8 +6,13 @@ defmodule AbsintheGen.RenderTemplate do
       do: render("types.eex", context: context, schema: schema)
 
   def render(template_name, bindings) do
-    [@template_directory, template_name]
+    file_dir =
+      __ENV__.file
+      |> Path.dirname()
+
+    [file_dir, "..", @template_directory, template_name]
     |> Path.join()
+    |> IO.inspect()
     |> EEx.eval_file(bindings, trim: true)
   end
 end

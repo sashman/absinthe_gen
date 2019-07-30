@@ -4,7 +4,14 @@ defmodule Mix.Tasks.Absinthe.Gen.Scaffold do
 
   @shortdoc "Create absinthe scaffold files."
   def run([context | [name | attrs]]) do
-    web_module = "#{AbsintheGen.parent_app()}Web"
+    parent_app = AbsintheGen.parent_app()
+
+    web_module =
+      "#{
+        parent_app
+        |> Atom.to_string()
+        |> Macro.camelize()
+      }Web"
 
     types_contents =
       RenderTemplate.render_types(%{web_module: web_module}, %{
@@ -13,7 +20,9 @@ defmodule Mix.Tasks.Absinthe.Gen.Scaffold do
         attrs: parse_attrs(attrs)
       })
 
-    File.write("#{context}_types.ex", types_contents)
+    :ok =
+      Path.join(["lib", "#{parent_app}_web", "#{context}_types.ex"])
+      |> File.write(types_contents)
   end
 
   defp parse_attrs(attrs) when is_list(attrs) do

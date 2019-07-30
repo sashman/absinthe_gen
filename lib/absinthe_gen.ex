@@ -26,7 +26,5 @@ defmodule AbsintheGen do
       [] -> :absinthe_gen
       [first | _] -> first
     end
-    |> Atom.to_string()
-    |> Macro.camelize()
   end
 end
