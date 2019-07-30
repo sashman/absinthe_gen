@@ -8,6 +8,6 @@ defmodule AbsintheGen.RenderTemplate do
   def render(template_name, bindings) do
     [@template_directory, template_name]
     |> Path.join()
-    |> EEx.eval_file(bindings)
+    |> EEx.eval_file(bindings, trim: true)
   end
 end

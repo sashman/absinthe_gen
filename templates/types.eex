@@ -3,6 +3,7 @@ defmodule <%= context.web_module %>.Schema.<%= schema.alias %>Types do
 
   object <%= schema.name %>: do
    <%= for {k, v} <- schema.attrs do %>
-      field :<%= k %>, :<%= v %><% end %>
+      field :<%= k %>, :<%= v %>
+    <% end %>
   end
 end
