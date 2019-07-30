@@ -15,7 +15,7 @@ defmodule Mix.Tasks.Absinthe.Gen.Scaffold do
 
     types_contents =
       RenderTemplate.render_types(%{web_module: web_module}, %{
-        alias: context,
+        alias: context |> Macro.camelize() |> String.capitalize(),
         name: name,
         attrs: parse_attrs(attrs)
       })
