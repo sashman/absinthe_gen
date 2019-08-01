@@ -20,7 +20,11 @@ defmodule Mix.Tasks.Absinthe.Gen.Scaffold do
         attrs: parse_attrs(attrs)
       })
 
-    output = Path.join(["lib", "#{parent_app}_web", "#{context}_types.ex"])
+    output = Path.join(["lib", "#{parent_app}_web", "schema", "#{context}_types.ex"])
+
+    output
+    |> Path.dirname()
+    |> File.mkdir_p!()
 
     :ok =
       output
