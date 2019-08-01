@@ -32,6 +32,7 @@ defmodule Mix.Tasks.Absinthe.Gen.Scaffold do
       {Path.join(["lib", "#{parent_app}_web", "resolvers", "#{context}.ex"]), resolver_contents}
     ]
     |> OutputFiles.write_files()
+    |> AbsintheGen.print_message()
   end
 
   defp parse_attrs(attrs) when is_list(attrs) do
