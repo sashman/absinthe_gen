@@ -1,6 +1,6 @@
 defmodule Mix.Tasks.Absinthe.Gen.Scaffold do
   use Mix.Task
-  alias AbsintheGen.RenderTemplate
+  alias AbsintheGen.{RenderTemplate, OutputFiles}
 
   @shortdoc "Create absinthe scaffold files."
   def run([context | [name | attrs]]) do
@@ -20,17 +20,9 @@ defmodule Mix.Tasks.Absinthe.Gen.Scaffold do
         attrs: parse_attrs(attrs)
       })
 
-    output = Path.join(["lib", "#{parent_app}_web", "schema", "#{context}_types.ex"])
-
-    output
-    |> Path.dirname()
-    |> File.mkdir_p!()
-
-    :ok =
-      output
-      |> File.write(types_contents)
-
-    output
+    OutputFiles.write_files([
+      {Path.join(["lib", "#{parent_app}_web", "schema", "#{context}_types.ex"]), types_contents}
+    ])
   end
 
   defp parse_attrs(attrs) when is_list(attrs) do
