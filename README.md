@@ -18,3 +18,11 @@ end
 Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
 and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
 be found at [https://hexdocs.pm/absinthe_gen](https://hexdocs.pm/absinthe_gen).
+
+## Usage
+
+The scaffold task will generate a schema, a type and a resolver files.
+
+```
+mix absinthe.gen.scaffold my_context my_type [my_field:string]
+```
