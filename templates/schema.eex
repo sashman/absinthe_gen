@@ -1,0 +1,16 @@
+defmodule <%= context.web_module %>.Schema do
+  use Absinthe.Schema
+  import_types <%= context.web_module %>.Schema.<%= schema.alias %>Types
+
+  alias <%= context.web_module %>.Resolvers
+
+  query do
+
+    @desc "Get all <%= schema.name_plural %>"
+    field :<%= schema.name_plural %>, list_of(:<%= schema.name %>) do
+      resolve &Resolvers.<%= schema.alias %>.list_<%= schema.name_plural %>/3
+    end
+
+  end
+
+end

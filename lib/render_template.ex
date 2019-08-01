@@ -5,6 +5,10 @@ defmodule AbsintheGen.RenderTemplate do
       when is_map(attrs),
       do: render("types.eex", context: context, schema: schema)
 
+  def render_schema(context = %{web_module: _}, schema = %{alias: _, name: _, attrs: attrs})
+      when is_map(attrs),
+      do: render("schema.eex", context: context, schema: schema)
+
   def render(template_name, bindings) do
     file_dir =
       __ENV__.file

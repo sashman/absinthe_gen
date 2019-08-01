@@ -13,15 +13,21 @@ defmodule Mix.Tasks.Absinthe.Gen.Scaffold do
         |> Macro.camelize()
       }Web"
 
-    types_contents =
-      RenderTemplate.render_types(%{web_module: web_module}, %{
-        alias: context |> Macro.camelize() |> String.capitalize(),
-        name: name,
-        attrs: parse_attrs(attrs)
-      })
+    ctx = %{web_module: web_module}
+
+    schema = %{
+      alias: context |> Macro.camelize() |> String.capitalize(),
+      name: name,
+      name_plural: "#{name}s",
+      attrs: parse_attrs(attrs)
+    }
+
+    types_contents = RenderTemplate.render_types(ctx, schema)
+    types_schema = RenderTemplate.render_schema(ctx, schema)
 
     OutputFiles.write_files([
-      {Path.join(["lib", "#{parent_app}_web", "schema", "#{context}_types.ex"]), types_contents}
+      {Path.join(["lib", "#{parent_app}_web", "schema", "#{context}_types.ex"]), types_contents},
+      {Path.join(["lib", "#{parent_app}_web", "schema.ex"]), types_schema}
     ])
   end
 
