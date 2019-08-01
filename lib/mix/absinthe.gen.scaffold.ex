@@ -20,9 +20,13 @@ defmodule Mix.Tasks.Absinthe.Gen.Scaffold do
         attrs: parse_attrs(attrs)
       })
 
+    output = Path.join(["lib", "#{parent_app}_web", "#{context}_types.ex"])
+
     :ok =
-      Path.join(["lib", "#{parent_app}_web", "#{context}_types.ex"])
+      output
       |> File.write(types_contents)
+
+    output
   end
 
   defp parse_attrs(attrs) when is_list(attrs) do
