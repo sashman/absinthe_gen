@@ -18,7 +18,7 @@ The docs can be found at [https://hexdocs.pm/absinthe_gen](https://hexdocs.pm/ab
 
 ## Usage
 
-The scaffold task will generate a schema, a type and a resolver files.
+The scaffold task will generate a schema, a type and a resolver files based on ["Our First Query" tutorial](https://hexdocs.pm/absinthe/our-first-query.html).
 
 ```
 mix absinthe.gen.scaffold my_context my_type [my_field:string]
