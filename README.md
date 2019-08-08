@@ -22,4 +22,10 @@ The scaffold task will generate a schema, a type and a resolver files based on [
 
 ```
 mix absinthe.gen.scaffold my_context my_type [my_field:string]
+
+Created:
+
+	lib/absinthe_app_web/schema/my_context_types.ex
+	lib/absinthe_app_web/schema.ex
+	lib/absinthe_app_web/resolvers/my_type.ex
 ```
