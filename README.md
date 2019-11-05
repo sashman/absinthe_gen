@@ -9,7 +9,7 @@ Available on [hex.pm](https://hex.pm/packages/absinthe_gen). The package can be 
 ```elixir
 def deps do
   [
-    {:absinthe_gen, "~> 0.1.0"}
+    {:absinthe_gen, "~> 0.1.1"}
   ]
 end
 ```
