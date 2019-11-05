@@ -20,7 +20,7 @@ defmodule AbsintheGen.RenderTemplate do
       __ENV__.file
       |> Path.dirname()
 
-    [file_dir, "..", @template_directory, template_name]
+    [file_dir, @template_directory, template_name]
     |> Path.join()
     |> EEx.eval_file([context: context, schema: schema], trim: true)
   end
