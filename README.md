@@ -9,7 +9,7 @@ Available on [hex.pm](https://hex.pm/packages/absinthe_gen). The package can be 
 ```elixir
 def deps do
   [
-    {:absinthe_gen, "~> 0.1.0"}
+    {:absinthe_gen, "~> 0.1.1"}
   ]
 end
 ```
@@ -18,10 +18,10 @@ The docs can be found at [https://hexdocs.pm/absinthe_gen](https://hexdocs.pm/ab
 
 ## Usage
 
-The scaffold task will generate a schema, a type and a resolver files based on ["Our First Query" tutorial](https://hexdocs.pm/absinthe/our-first-query.html).
+The scaffold task will generate a schema, a type and a resolver files based on ["Our First Query" tutorial](https://hexdocs.pm/absinthe/our-first-query.html). You can pass in multiple fields, the field types can be found [here](https://hexdocs.pm/absinthe/Absinthe.Type.Scalar.html#module-built-in-scalars).
 
 ```
-mix absinthe.gen.scaffold my_context my_type [my_field:string]
+mix absinthe.gen.scaffold my_context my_type my_field:string my_other_field:string
 
 Created:
 
