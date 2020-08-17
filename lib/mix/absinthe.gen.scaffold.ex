@@ -3,6 +3,20 @@ defmodule Mix.Tasks.Absinthe.Gen.Scaffold do
   alias AbsintheGen.{RenderTemplate, OutputFiles}
 
   @shortdoc "Create absinthe scaffold files."
+  @moduledoc """
+  Will generate a scaffold consisting of a schema, type and resolver files. Multiple fields are accepted.
+
+  Example:
+  ```
+  mix absinthe.gen.scaffold my_context my_type my_field:string my_other_field:string
+
+  Created:
+
+    lib/absinthe_app_web/schema/my_context_types.ex
+    lib/absinthe_app_web/schema.ex
+    lib/absinthe_app_web/resolvers/my_type.ex
+  ```
+  """
   def run([context | [name | attrs]]) do
     parent_app = AbsintheGen.parent_app()
 
