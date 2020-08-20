@@ -29,3 +29,7 @@ Created:
 	lib/absinthe_app_web/schema.ex
 	lib/absinthe_app_web/resolvers/my_type.ex
 ```
+
+Available options:
+
+- `--path PATH` - specify a subdirectory of `absinthe_app_web` where to create the files.
