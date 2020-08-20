@@ -4,7 +4,7 @@ defmodule AbsintheGen.MixProject do
   def project do
     [
       app: :absinthe_gen,
-      version: "0.1.2",
+      version: "0.2.0",
       elixir: "~> 1.8",
       start_permanent: Mix.env() == :prod,
       dialyzer: [plt_add_apps: [:mix]],
