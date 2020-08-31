@@ -1,6 +1,8 @@
 # AbsintheGen
 
-Scaffold generator for Elixir [Absinthe](https://hexdocs.pm/absinthe/overview.html) projects
+Scaffold generator for Elixir [Absinthe](https://hexdocs.pm/absinthe/overview.html) projects.
+
+**I'm currently looking for ideas and suggestions, please feel create to create issue with features you'd like added!**
 
 ## Installation
 
