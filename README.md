@@ -2,7 +2,7 @@
 
 Scaffold generator for Elixir [Absinthe](https://hexdocs.pm/absinthe/overview.html) projects.
 
-**I'm currently looking for ideas and suggestions, please feel create to create an issue with features you'd like added or add ideas [here](https://github.com/sashman/absinthe_gen/issues/3)!**
+**I'm currently looking for ideas and suggestions, please feel to create an issue with features you'd like added or add ideas [here](https://github.com/sashman/absinthe_gen/issues/3)!**
 
 ## Installation
 
